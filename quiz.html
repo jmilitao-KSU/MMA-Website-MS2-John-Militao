@@ -102,11 +102,11 @@ button {
 
   <div class="question">
     <h3>2. Which does NOT belong in Muay Thai?</h3>
-    <input type="radio" name="q2" value="punching"> Punching<br>
-    <input type="radio" name="q2" value="kicking"> Kicking<br>
-    <input type="radio" name="q2" value="elbowing"> Elbowing<br>
-    <input type="radio" name="q2" value="knees"> Knees<br>
-    <input type="radio" name="q2" value="headbutts"> Headbutts<br>
+    <input type="checkbox" name="q2" value="punching"> Punching<br>
+    <input type="checkbox" name="q2" value="kicking"> Kicking<br>
+    <input type="checkbox" name="q2" value="elbowing"> Elbowing<br>
+    <input type="checkbox" name="q2" value="knees"> Knees<br>
+    <input type="checkbox" name="q2" value="headbutts"> Headbutts<br>
   </div>
 
   <div class="question">
@@ -158,13 +158,16 @@ function checkAnswers() {
   }
   
   /*Question 2, Multiple choice*/
-  var q2 = document.querySelector('input[name="q2"]:checked');
-  if (q2 && q2.value == "headbutts") {
-    score++;
-    details += "<p class='correct'>Question 2: Correct! Headbutts are not allowed, atleast in our gym.</p>";
-  } else {
-    details += "<p class='wrong'>Question 2: Wrong. Correct answer: Headbutts</p>";
-  }
+  var q2Headbutts = document.querySelector('input[name="q2"][value="headbutts"]');
+var q2Biting = document.querySelector('input[name="q2"][value="biting"]');
+
+if (q2Headbutts.checked && q2Biting.checked) {
+  score++;
+  details += "<p class='correct'>Question 2: Correct! Headbutts and biting are not allowed.</p>";
+} else {
+  details += "<p class='wrong'>Question 2: Wrong. Correct answers: Headbutts and Biting</p>";
+}
+  
   
   /*Question 3, Multiple choice*/
   var q3 = document.querySelector('input[name="q3"]:checked');
@@ -221,4 +224,5 @@ function resetQuiz() {
   <p>&copy; 2025 Cunha MMA. All Rights Reserved.</p>
 </div>
 </body>
+
 </html>
