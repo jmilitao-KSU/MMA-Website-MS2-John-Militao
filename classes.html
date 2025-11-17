@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Cunha MMA - Classes</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+  font-family:sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #000000;
+}
+
+/* Nav Bar */
+.nav-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: #333;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin: 20px auto;
+  width: max-content;
+}
+
+.nav-container a {
+  color: #f2f2f2;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.nav-container a:hover {
+  background-color: #ff0000;
+  color: white;
+}
+
+/* Hero */
+.hero {
+  background-image: url('Photos/CalebKicking.jpg'); 
+  height: 50vh;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 0;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.hero-text p {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+/* Classes */
+.content {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.content h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2em;
+  color: #333;
+}
+
+.class-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
+  align-items: center;
+}
+
+.class-card img {
+  width: 300px;
+  border-radius: 8px;
+}
+
+.class-info {
+  flex: 1;
+}
+
+.class-info h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.class-info p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* Schedule Grid */
+.schedule {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.schedule div {
+  background-color: #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Nav Bar -->
+<div class="nav-container">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="classes.html">Classes</a>
+  <a href="contact.html">Contact</a>
+  <a href="quiz.html">Quiz</a>
+</div>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-text">
+    <h1>Our Classes</h1>
+    <p>Train in Muay Thai, Brazilian Jiu-Jitsu, and MMA</p>
+  </div>
+</div>
+
+<!-- Classes -->
+<div class="content">
+
+  <h2>Muay Thai</h2>
+  <div class="class-card">
+    <img src="Photos/MuayThai.jpg" alt="Muay Thai Class">
+    <div class="class-info">
+      <p>Martial Art originating from Thailand, utilizing punches, elbows, knees, and kicks.</p>
+      <div class="schedule">
+        <div>Mon 12:00 PM</div>
+        <div>Mon 6:30 PM</div>
+        <div>Tue 12:00 PM</div>
+        <div>Tue 6:30 PM</div>
+        <div>Wed 12:00 PM</div>
+        <div>Wed 6:30 PM</div>
+        <div>Thu 12:00 PM</div>
+        <div>Thu 6:30 PM</div>
+        <div>Fri 12:00 PM</div>
+        <div>Fri 6:30 PM</div>
+        <div>Sat 10:30 AM</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Kids Brazilian Jiu-Jitsu</h2>
+  <div class="class-card">
+    <img src="Photos/AndreKidsBJJ.jpg" alt="Kids BJJ Class">
+    <div class="class-info">
+      <p>Brazilian Jiu-Jitsu class oriented for kids to learn grappling, self defense, and discipline.</p>
+      <div class="schedule">
+        <div>Mon 5:15 PM</div>
+        <div>Tue 5:15 PM</div>
+        <div>Wed 5:15 PM</div>
+        <div>Thu 5:15 PM</div>
+        <div>Fri 5:15 PM</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>No-Gi Brazilian Jiu-Jitsu</h2>
+  <div class="class-card">
+    <img src="Photos/NoGi.jpg" alt="No-Gi BJJ Class">
+    <div class="class-info">
+      <p>Focuses on grappling without the gi, with primary focus on transitions, positions, and mechanics.</p>
+      <div class="schedule">
+        <div>Mon 7:30 PM</div>
+        <div>Wed 7:30 PM</div>
+        <div>Fri 6:30 PM</div>
+        <div>Sat 12:00 PM</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Gi Brazilian Jiu-Jitsu</h2>
+  <div class="class-card">
+    <img src="Photos/GiBJJ.jpg" alt="Andre in the Gi before competition">
+    <div class="class-info">
+      <p>Traditional Brazilian Jiujitsu, utilizing the gi for grips to achieve positional superiority.</p>
+      <div class="schedule">
+        <div>Mon 6:30 PM</div>
+        <div>Tue 6:30 PM</div>
+        <div>Wed 6:30 PM</div>
+        <div>Thu 6:30 PM</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Mixed Martial Arts</h2>
+  <div class="class-card">
+    <img src="Photos/MMA.jpg" alt="MMA Class">
+    <div class="class-info">
+      <p>Combines striking and grappling techniques for a well-rounded experience.</p>
+      <div class="schedule">
+        <div>Tue 7:30 PM</div>
+        <div>Thu 7:30 PM</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Women's Muay Thai</h2>
+  <div class="class-card">
+    <img src="Photos/Womens Muay Thai.jpg" alt="Women's Muay Thai Class">
+    <div class="class-info">
+      <p>Brand new class stemming from Muay Thai, oriented for women.</p>
+      <div class="schedule">
+        <div>Tue 5:00 PM</div>
+        <div>Wed 5:00 PM</div>
+        <div>Thu 5:00 PM</div>
+        <div>Fri 5:00 PM</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>&copy; 2025 Cunha MMA. All Rights Reserved.</p>
+</div>
+
+</body>
+</html>

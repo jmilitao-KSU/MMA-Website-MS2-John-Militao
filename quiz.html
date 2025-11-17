@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Cunha MMA - Quiz</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  background-color: #000000;
+  color: white;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Nav Bar */
+.nav{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: #333;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin: 20px auto;
+  width: max-content;
+}
+
+.nav a {
+  color: #f2f2f2;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  background-color: #ff0000;
+  color: white;
+}
+.quiz-box {
+  background-color: white;
+  color: black;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.question {
+  background-color: #f0f0f0;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 5px;
+}
+
+button {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 10px;
+}
+
+.results {
+  display: none;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+.correct {
+  color: green;
+  font-weight: bold;
+}
+
+.wrong {
+  color: red;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="classes.html">Classes</a>
+  <a href="quiz.html">Quiz</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="quiz-box">
+  <h1 style="text-align: center;">Cunha MMA Quiz</h1>
+  
+  <div class="question">
+    <h3>1. Does Cunha MMA offer boxing? Y/N</h3>
+    <input type="text" id="answer1" style="width: 100px; padding: 5px;">
+  </div>
+
+  <div class="question">
+    <h3>2. Which does NOT belong in Muay Thai?</h3>
+    <input type="radio" name="q2" value="punching"> Punching<br>
+    <input type="radio" name="q2" value="kicking"> Kicking<br>
+    <input type="radio" name="q2" value="elbowing"> Elbowing<br>
+    <input type="radio" name="q2" value="knees"> Knees<br>
+    <input type="radio" name="q2" value="headbutts"> Headbutts<br>
+  </div>
+
+  <div class="question">
+    <h3>3. Who is our Gi coach?</h3>
+    <input type="radio" name="q3" value="andre"> Andre Cunha<br>
+    <input type="radio" name="q3" value="sergio"> Sergio Cunha<br>
+    <input type="radio" name="q3" value="jon"> Jon Ortiz<br>
+  </div>
+
+  <div class="question">
+    <h3>4. What city are we located in?</h3>
+    <input type="radio" name="q4" value="marietta"> Marietta<br>
+    <input type="radio" name="q4" value="kennesaw"> Kennesaw<br>
+    <input type="radio" name="q4" value="smyrna"> Smyrna<br>
+    <input type="radio" name="q4" value="austell"> Austell<br>
+  </div>
+
+  <div class="question">
+    <h3>5. Is everybody welcome to train here?</h3>
+    <input type="radio" name="q5" value="yes"> Yes<br>
+    <input type="radio" name="q5" value="no"> No<br>
+  </div>
+
+  <div style="text-align: center;">
+    <button onclick="checkAnswers()">Submit Answers</button>
+    <button onclick="resetQuiz()">Try Again</button>
+  </div>
+
+  <div class="results" id="results">
+    <h2>Your Results:</h2>
+    <div id="score"></div>
+    <div id="details"></div>
+  </div>
+</div>
+
+<script>
+/*Check answers function*/
+function checkAnswers() {
+  var score = 0;
+  var details = "";
+  
+  /* Question 1, Fill in blank*/
+  var q1 = document.getElementById("answer1").value.toLowerCase();
+  if (q1 == "n" || q1 == "no" || q1 == "N" || q1 == "No") {
+    score++;
+    details += "<p class='correct'>Question 1: Correct! We don't offer boxing at the moment.</p>";
+  } else {
+    details += "<p class='wrong'>Question 1: Wrong. Correct answer: Y</p>";
+  }
+  
+  /*Question 2, Multiple choice*/
+  var q2 = document.querySelector('input[name="q2"]:checked');
+  if (q2 && q2.value == "headbutts") {
+    score++;
+    details += "<p class='correct'>Question 2: Correct! Headbutts are not allowed, atleast in our gym.</p>";
+  } else {
+    details += "<p class='wrong'>Question 2: Wrong. Correct answer: Headbutts</p>";
+  }
+  
+  /*Question 3, Multiple choice*/
+  var q3 = document.querySelector('input[name="q3"]:checked');
+  if (q3 && q3.value == "andre") {
+    score++;
+    details += "<p class='correct'>Question 3: Correct! Andre is our Gi coach.</p>";
+  } else {
+    details += "<p class='wrong'>Question 3: Wrong. Correct answer: Andre Cunha</p>";
+  }
+  
+  /*Question 4, Multiple choice*/
+  var q4 = document.querySelector('input[name="q4"]:checked');
+  if (q4 && q4.value == "marietta") {
+    score++;
+    details += "<p class='correct'>Question 4: Correct! We're in Marietta.</p>";
+  } else {
+    details += "<p class='wrong'>Question 4: Wrong. Correct answer: Marietta</p>";
+  }
+  
+  /*Question 5, Multiple choice*/
+  var q5 = document.querySelector('input[name="q5"]:checked');
+  if (q5 && q5.value == "yes") {
+    score++;
+    details += "<p class='correct'>Question 5: Correct! Everyone is welcome!</p>";
+  } else {
+    details += "<p class='wrong'>Question 5: Wrong. Correct answer: Yes</p>";
+  }
+  
+  /*Show result calculations*/
+  var percentage = (score / 5) * 100;
+  var passFail = percentage >= 70 ? "<p class='correct'>You Passed!</p>" : "<p class='wrong'>Try Again!</p>";
+  
+  document.getElementById("score").innerHTML = "<h3>" + passFail + " Score: " + score + "/5 (" + percentage + "%)</h3>";
+  document.getElementById("details").innerHTML = details;
+  document.getElementById("results").style.display = "block";
+}
+
+/*Reset function*/
+function resetQuiz() {
+
+  document.getElementById("answer1").value = "";
+  
+  var radios = document.querySelectorAll('input[type="radio"]');
+  for (var i = 0; i < radios.length; i++) {
+    radios[i].checked = false;
+  }
+  
+   /*Hide results*/
+  document.getElementById("results").style.display = "none";
+}
+</script>
+<!--Footer-->
+<div class="footer">
+  <p>&copy; 2025 Cunha MMA. All Rights Reserved.</p>
+</div>
+</body>
+</html>

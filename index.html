@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Cunha MMA</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #000000;
+}
+
+/* Hero */
+.hero {
+  background-image: url('photos/InitialCunhaPhoto.jpg'); 
+  height: 80vh;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 0;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.hero-text p {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 12px 24px;
+  margin-top: 20px;
+  background-color: red;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.hero-button:hover {
+  background-color: rgb(67, 0, 0);
+}
+
+/* Nav Bar */
+.nav-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: #333;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin: 20px auto;
+  width: max-content;
+}
+
+.nav-container a {
+  color: #f2f2f2;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.nav-container a:hover {
+  background-color: #ff0000;
+  color: white;
+}
+
+/* Content */
+.content {
+  background: linear-gradient(to right, #ffffff, #f74343);
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+.content h2 {
+  font-size: 5em;
+  margin-bottom: 20px;
+  color: #040000;
+  position: relative;
+}
+
+.content h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  margin: 10px;
+  border-radius: 2px;
+}
+
+.gym-info p {
+  font-size: 1.2em;
+  line-height: 1.8;
+  color: #000000;
+  margin: 10px 0;
+}
+.gym-photos {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: linear-gradient(to right, #000000, #ff0000);
+}
+
+.gym-photos h3 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.photo-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.photo img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(253, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.photo img:hover {
+  transform: scale(1.05);
+}
+
+.caption {
+  margin-top: 15px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #555;
+}
+
+
+/* Footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<!-- Nav Bar -->
+<div class="nav-container">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="classes.html">Classes</a>
+  <a href="contact.html">Contact</a>
+  <a href="quiz.html">Quiz</a>
+</div>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-text">
+    <h1>Cemented in Legacy</h1>
+    <p>Train hard. Fight smart. Join Cunha MMA today.</p>
+    <a href="classes.html" class="hero-button">Learn More</a>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="content" id="content">
+  <h2>Welcome to Cunha MMA</h2>
+  <div class="gym-info">
+    <p>Metro Atlanta's next upcoming gym, located on <strong>Highway 41</strong>.</p>
+    <p>We offer <strong>Muay Thai</strong>, <strong>Brazilian Jiu-Jitsu</strong>, and <strong>Mixed Martial Arts</strong>.</p>
+  </div>
+</div>
+
+<div class="gym-photos">
+  <div class="photo-gallery">
+    <div class="photo">
+      <img src="Photos/CunhaBJJmats.webp" alt="Cunha BJJ Mats">
+    </div>
+    <div class="photo">
+      <img src="Photos/Octagon.webp" alt="Octagon">
+    </div>
+    <div class="photo">
+      <img src="Photos/MuayThaiMats.jpg" alt="Muay Thai">
+    </div>
+  </div>
+  <p class="caption">All walks of life are welcome!</p>
+</div>
+
+
+<div class="footer">
+  <p>&copy; 2025 Cunha MMA. All Rights Reserved.</p>
+</div>
+
+</body>
+</html>

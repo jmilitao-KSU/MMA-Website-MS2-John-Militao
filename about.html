@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Cunha MMA - About</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+  font-family:sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #000000;
+}
+
+/* Nav Bar */
+.nav-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: #333;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin: 20px auto;
+  width: max-content;
+}
+
+.nav-container a {
+  color: #f2f2f2;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.nav-container a:hover {
+  background-color: #ff0000;
+  color: white;
+}
+
+/* Hero */
+.hero {
+  background-image: url('photos/GustavoLooking.jpg');
+  height: 50vh;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 0;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.hero-text p {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+/* Content */
+.content {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #333;
+}
+
+.content p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Team Grid */
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.team-member {
+  background-color: #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  width: 250px;
+  text-align: center;
+}
+
+.team-member img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.team-member h3 {
+  margin: 10px 0 5px 0;
+}
+
+.team-member p {
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* Footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<!-- Nav Bar -->
+<div class="nav-container">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="classes.html">Classes</a>
+  <a href="contact.html">Contact</a>
+  <a href="quiz.html">Quiz</a>
+</div>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-text">
+    <h1>About Cunha MMA</h1>
+    <p>Forging Champions For A Better Tomorrow</p>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="content">
+  <h2>Our Creed</h2>
+  <p>We believe in providing elite level training to all members, filled with purpose and dedication. 
+    It is essential to foster a strong, supportive community through our teachings.
+    Here at Cunha MMA, we empower everyone to reach their full potential as they walk through their fighting journey.</p>
+</div>
+
+<!-- Team -->
+<div class="content">
+  <h2>Meet Our Coaches!</h2>
+  <div class="team">
+    <div class="team-member">
+      <img src="photos/AndreKidsBJJ.jpg" alt="Andre Cunha">
+      <h3>Andre Cunha</h3>
+      <p>Head Coach: BJJ,Muay Thai, & MMA</p>
+    </div>
+    <div class="team-member">
+      <img src="Photos/Sergio.jpeg" alt="Sergio Cunha">
+      <h3>Sergio Cunha</h3>
+      <p>Assistant Coach: Muay Thai & MMA</p>
+    </div>
+    <div class="team-member">
+      <img src="Photos/Jon.jpg" alt="Jon Ortiz">
+      <h3>Jon Ortiz</h3>
+      <p>Assitant Coach: Muay Thai & MMA</p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>&copy; 2025 Cunha MMA. All Rights Reserved.</p>
+</div>
+
+</body>
+</html>
+
